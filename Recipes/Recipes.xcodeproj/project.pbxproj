@@ -16,6 +16,8 @@
 		DB70A4C92395DDC800F0819B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70A4C82395DDC800F0819B /* MainViewController.swift */; };
 		DB70A4CB2395DE5900F0819B /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70A4CA2395DE5900F0819B /* RecipesTableViewController.swift */; };
 		DB70A4CD2395DEFE00F0819B /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70A4CC2395DEFE00F0819B /* RecipeDetailViewController.swift */; };
+		DB70A4CF2395EE7500F0819B /* RecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70A4CE2395EE7500F0819B /* RecipeController.swift */; };
+		DB70A4D12395F3A200F0819B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70A4D02395F3A200F0819B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		DB70A4C82395DDC800F0819B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DB70A4CA2395DE5900F0819B /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		DB70A4CC2395DEFE00F0819B /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		DB70A4CE2395EE7500F0819B /* RecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeController.swift; sourceTree = "<group>"; };
+		DB70A4D02395F3A200F0819B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 				9DA0F0832117E40100A99E97 /* Assets.xcassets */,
 				9DA0F0852117E40100A99E97 /* LaunchScreen.storyboard */,
 				9DA0F0882117E40100A99E97 /* Info.plist */,
+				DB70A4D02395F3A200F0819B /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -66,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				9D59B52B2117F533002FB7CD /* Recipe.swift */,
+				DB70A4CE2395EE7500F0819B /* RecipeController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				DB70A4C82395DDC800F0819B /* MainViewController.swift */,
-				DB70A4CA2395DE5900F0819B /* RecipesTableViewController.swift */,
 				DB70A4CC2395DEFE00F0819B /* RecipeDetailViewController.swift */,
+				DB70A4CA2395DE5900F0819B /* RecipesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,10 +187,12 @@
 			files = (
 				9D59AF432117E647002FB7CD /* RecipesNetworkClient.swift in Sources */,
 				9DA0F07D2117E3F800A99E97 /* AppDelegate.swift in Sources */,
+				DB70A4CF2395EE7500F0819B /* RecipeController.swift in Sources */,
 				9D59B52C2117F533002FB7CD /* Recipe.swift in Sources */,
 				DB70A4C92395DDC800F0819B /* MainViewController.swift in Sources */,
 				DB70A4CD2395DEFE00F0819B /* RecipeDetailViewController.swift in Sources */,
 				DB70A4CB2395DE5900F0819B /* RecipesTableViewController.swift in Sources */,
+				DB70A4D12395F3A200F0819B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

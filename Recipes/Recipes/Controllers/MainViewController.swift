@@ -11,29 +11,94 @@ import UIKit
 class MainViewController: UIViewController {
 
     // MARK: - Outlets
-    @IBOutlet weak var textFieldOutlet: UITextField!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    // MARK: - Properties
+    
+    let defaults = UserDefaults.standard
+    let recipeController = RecipeController()
+    let networkClient = RecipesNetworkClient()
+    
+    var allRecipes = [Recipe](){
+        didSet {
+            filterRecipes()
+        }
+    }
+    
+    var recipesTableViewController: RecipesTableViewController? {
+        didSet {
+            recipesTableViewController?.recipes = filteredRecipes
+        }
+    }
+    
+    
+    var filteredRecipes = [Recipe]() {
+        didSet {
+            recipesTableViewController?.recipes = filteredRecipes
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        searchBar.delegate = self
+        fetchRecipes()
     }
     
 
-    // MARK: - Actions
     
-    @IBAction func didEndAction(_ sender: Any) {
-    }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        switch segue.identifier {
+        case "tableViewSegue":
+            guard let recipesTableVC = segue.destination as? RecipesTableViewController else { return }
+            recipesTableViewController = recipesTableVC
+        default:
+            break
+        }
     }
-    */
+    
 
+    // MARK: - Private
+    
+    private func filterRecipes() {
+        guard let search = searchBar.text, !search.isEmpty else {
+            filteredRecipes = allRecipes
+            return
+        }
+        filteredRecipes = allRecipes.filter { $0.name.contains(search.capitalized) }
+    }
+    
+    private func fetchRecipes() {
+        if defaults.bool(forKey: UserDefaultsKeys.recipesLoaded) {
+            self.allRecipes = recipeController.recipes
+        } else {
+            networkClient.fetchRecipes { [weak self] recipes, error in
+                if let error = error {
+                    NSLog("\(error)")
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    guard let recipes = recipes, let self = self else { return }
+                    self.allRecipes = recipes
+                    self.recipeController.recipes = recipes
+                    self.defaults.set(true, forKey: UserDefaultsKeys.recipesLoaded)
+                    self.recipeController.saveToPersistentStore()
+                }
+            }
+        }
+    }
+}
+
+
+
+
+extension MainViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        filterRecipes()
+    }
 }

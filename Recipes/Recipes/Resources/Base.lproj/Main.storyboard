@@ -16,36 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lWZ-t7-nIl">
-                                <rect key="frame" x="8" y="44" width="359" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="didEndAction:" destination="r7U-wh-Jt4" eventType="editingDidEndOnExit" id="Nwa-Ac-MSX"/>
-                                </connections>
-                            </textField>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTd-km-496">
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTd-km-496">
                                 <rect key="frame" x="8" y="78" width="359" height="581"/>
                                 <connections>
                                     <segue destination="m5e-nb-9C3" kind="embed" identifier="tableViewSegue" id="jwF-Bc-Gcc"/>
                                 </connections>
                             </containerView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8TI-1b-Cfj">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="bTd-km-496" firstAttribute="top" secondItem="lWZ-t7-nIl" secondAttribute="bottom" id="NAU-Gv-Gra"/>
+                            <constraint firstItem="8TI-1b-Cfj" firstAttribute="leading" secondItem="Vuz-Ln-zZ8" secondAttribute="leading" id="A0U-vP-I8F"/>
+                            <constraint firstItem="8TI-1b-Cfj" firstAttribute="trailing" secondItem="Vuz-Ln-zZ8" secondAttribute="trailing" id="Brv-Yh-uea"/>
                             <constraint firstItem="bTd-km-496" firstAttribute="leading" secondItem="Vuz-Ln-zZ8" secondAttribute="leading" constant="8" id="UcT-jf-hQ9"/>
                             <constraint firstItem="Vuz-Ln-zZ8" firstAttribute="bottom" secondItem="bTd-km-496" secondAttribute="bottom" constant="8" id="YyH-gW-xXr"/>
-                            <constraint firstItem="lWZ-t7-nIl" firstAttribute="leading" secondItem="Vuz-Ln-zZ8" secondAttribute="leading" constant="8" id="j5I-pj-v6G"/>
-                            <constraint firstItem="lWZ-t7-nIl" firstAttribute="top" secondItem="Vuz-Ln-zZ8" secondAttribute="top" id="qST-eG-KTI"/>
+                            <constraint firstItem="8TI-1b-Cfj" firstAttribute="top" secondItem="Vuz-Ln-zZ8" secondAttribute="top" id="gSw-nQ-wuY"/>
                             <constraint firstItem="Vuz-Ln-zZ8" firstAttribute="trailing" secondItem="bTd-km-496" secondAttribute="trailing" constant="8" id="rh9-5M-rjD"/>
-                            <constraint firstItem="Vuz-Ln-zZ8" firstAttribute="trailing" secondItem="lWZ-t7-nIl" secondAttribute="trailing" constant="8" id="w1U-t9-q8a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vuz-Ln-zZ8"/>
                     </view>
                     <navigationItem key="navigationItem" id="r5T-cd-4xe"/>
                     <connections>
-                        <outlet property="textFieldOutlet" destination="lWZ-t7-nIl" id="BPt-37-WTx"/>
+                        <outlet property="searchBar" destination="8TI-1b-Cfj" id="FHW-R7-9is"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uv-GK-iKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
