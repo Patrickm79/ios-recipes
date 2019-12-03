@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTd-km-496">
-                                <rect key="frame" x="8" y="78" width="359" height="581"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTd-km-496">
+                                <rect key="frame" x="8" y="44" width="359" height="615"/>
                                 <connections>
                                     <segue destination="m5e-nb-9C3" kind="embed" identifier="tableViewSegue" id="jwF-Bc-Gcc"/>
                                 </connections>
@@ -31,8 +31,11 @@
                         <constraints>
                             <constraint firstItem="8TI-1b-Cfj" firstAttribute="leading" secondItem="Vuz-Ln-zZ8" secondAttribute="leading" id="A0U-vP-I8F"/>
                             <constraint firstItem="8TI-1b-Cfj" firstAttribute="trailing" secondItem="Vuz-Ln-zZ8" secondAttribute="trailing" id="Brv-Yh-uea"/>
+                            <constraint firstItem="bTd-km-496" firstAttribute="leading" secondItem="Vuz-Ln-zZ8" secondAttribute="leading" constant="8" id="EP6-U8-oUO"/>
                             <constraint firstItem="bTd-km-496" firstAttribute="leading" secondItem="Vuz-Ln-zZ8" secondAttribute="leading" constant="8" id="UcT-jf-hQ9"/>
+                            <constraint firstItem="bTd-km-496" firstAttribute="top" secondItem="Vuz-Ln-zZ8" secondAttribute="top" id="WuB-Rv-TyT"/>
                             <constraint firstItem="Vuz-Ln-zZ8" firstAttribute="bottom" secondItem="bTd-km-496" secondAttribute="bottom" constant="8" id="YyH-gW-xXr"/>
+                            <constraint firstItem="Vuz-Ln-zZ8" firstAttribute="trailing" secondItem="bTd-km-496" secondAttribute="trailing" constant="8" id="bO5-5r-ddp"/>
                             <constraint firstItem="8TI-1b-Cfj" firstAttribute="top" secondItem="Vuz-Ln-zZ8" secondAttribute="top" id="gSw-nQ-wuY"/>
                             <constraint firstItem="Vuz-Ln-zZ8" firstAttribute="trailing" secondItem="bTd-km-496" secondAttribute="trailing" constant="8" id="rh9-5M-rjD"/>
                         </constraints>
